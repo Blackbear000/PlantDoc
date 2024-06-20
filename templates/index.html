@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>PlantDoc</title>
+
+    <!--vendors styles-->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/font-awesome.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/slick.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/slick-theme.min.css') }}"
+    />
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/default.css') }}"
+    />
+  </head>
+  <body>
+    <!--navigation-->
+    <section class="smart-scroll">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <a
+            class="navbar-brand heading-black"
+            href="index.html"
+            style="pointer-events: none; cursor: default"
+          >
+            PlantDoc
+          </a>
+
+          <button
+            class="navbar-toggler navbar-toggler-right border-0"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span data-feather="grid"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#Services">Services</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!--hero header-->
+    <section class="py-7 py-md-0 bg-hero" id="home">
+      <div class="container">
+        <div class="row vh-md-100">
+          <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+            <h1 class="heading-black text-capitalize">PlantDoc</h1>
+            <p class="lead py-3">
+              PlantDoc is an application that helps users detect plant anomoly
+              conditions.
+            </p>
+            <button
+              class="btn btn-primary d-inline-flex flex-row align-items-center"
+              id="get-started-button"
+            >
+              Get started now
+              <em class="ml-2" data-feather="arrow-right"></em>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Services section-->
+    <section
+      class="py-7 bg-dark section-angle top-left bottom-left"
+      id="Services"
+    >
+      <div class="container">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-6 mx-auto text-center">
+            <h2 class="heading-black" id="Services">Services</h2>
+          </div>
+        </div>
+        <div class="row mb-6 justify-content-center">
+          <div class="col-md-4 mx-4">
+            <button class="btn btn-primary btn-block" id="picture-button">
+              Picture
+            </button>
+          </div>
+          <div class="col-md-4 mx-4">
+            <button class="btn btn-primary btn-block" id="camera-button">
+              Real-time Camera
+            </button>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-4 mx-auto text-center">
+            <input
+              type="file"
+              class="row mb-4"
+              id="picture-upload"
+              name="picture"
+              accept="image/*"
+            />
+            <div class="col-md-5" id="camera-stream-div2" style="display: none">
+              <button id="up-button" class="arrow-button">&#8593;</button>
+              <div>
+                <button id="left-button" class="arrow-button">&#8592;</button>
+                <button id="right-button" class="arrow-button ml-2">
+                  &#8594;
+                </button>
+              </div>
+              <button id="down-button" class="arrow-button">&#8595;</button>
+              <div id="camera-stream-container" class="mt-4">
+                <img id="camera-stream" src="" alt="Camera Stream" />
+              </div>
+            </div>
+
+            <div id="new-content-area"></div>
+          </div>
+          <div class="col-md-3 mx-auto text-center">
+            <button class="btn btn-primary" id="convert-button">Detect!</button>
+            <button
+              class="btn btn-primary"
+              id="enable-camera-button"
+              style="display: none"
+            >
+              Enable Camera
+            </button>
+            <div class="col-md-3 mx-5 py-5 text-center button-container">
+              <button
+                class="btn btn-primary"
+                id="detect-button"
+                style="display: none"
+              >
+                Detect
+              </button>
+              <button
+                class="btn btn-primary"
+                id="stop-button"
+                style="display: none"
+              >
+                Stop
+              </button>
+            </div>
+          </div>
+          <div class="col-md-4 mx-auto text-center">
+            <p class="text-muted lead" id="result-preview-text"></p>
+            <table id="result-table">
+              <tr>
+                <td>Disease</td>
+              </tr>
+              <tr>
+                <td id="result-cell"></td>
+              </tr>
+            </table>
+            <table id="result-table2">
+              <tr>
+                <td>Position</td>
+                <td>Disease</td>
+              </tr>
+              <tr>
+                <td id="Position-cell"></td>
+                <td id="Disease-cell"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="py-6">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-12 text-muted text-center small-xl"></div>
+        </div>
+      </div>
+    </footer>
+
+    <!--scroll to top-->
+    <div class="scroll-top">
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const getStartedButton = document.getElementById("get-started-button");
+        const blogSection = document.getElementById("Services");
+
+        getStartedButton.addEventListener("click", function () {
+          blogSection.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const pictureUpload = document.getElementById("picture-upload");
+        const newContentArea = document.getElementById("new-content-area");
+
+        pictureUpload.addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.alt = "Uploaded Picture";
+            img.classList.add("preview-image");
+            newContentArea.innerHTML = ""; // Clear existing content
+            newContentArea.appendChild(img);
+          };
+
+          reader.readAsDataURL(file);
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const upButton = document.getElementById("up-button");
+        const downButton = document.getElementById("down-button");
+        const leftButton = document.getElementById("left-button");
+        const rightButton = document.getElementById("right-button");
+
+        function sendDirection(direction) {
+          fetch("http://localhost:930/control_command", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ cmd: direction }),
+          }).catch((error) => {
+            console.error("Error:", error);
+          });
+        }
+
+        upButton.addEventListener("mousedown", function () {
+          sendDirection("forward");
+        });
+
+        downButton.addEventListener("mousedown", function () {
+          sendDirection("backward");
+        });
+
+        leftButton.addEventListener("mousedown", function () {
+          sendDirection("left");
+        });
+
+        rightButton.addEventListener("mousedown", function () {
+          sendDirection("right");
+        });
+
+        window.addEventListener("mouseup", function () {
+          sendDirection(0);
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const enableCameraButton = document.getElementById(
+          "enable-camera-button"
+        );
+
+        let cameraEnabled = false; // Flag to track if camera is enabled
+
+        enableCameraButton.addEventListener("click", function () {
+          cameraEnabled = true; // Set the flag to true when button is clicked
+        });
+
+        // Only start updating camera stream if camera is enabled
+        setInterval(function () {
+          if (cameraEnabled) {
+            updateCameraStream();
+          }
+        }, 2000);
+      });
+
+      function updateCameraStream() {
+        fetch("http://localhost:930/test/img")
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.status === "ok" && data.img) {
+              document.getElementById(
+                "camera-stream"
+              ).src = `data:image/jpeg;base64, ${data.img}`;
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching camera stream:", error);
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const detectButton = document.getElementById("detect-button");
+
+        detectButton.addEventListener("click", function () {
+          fetch("/test/vo", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              camera_stream_src: "http://localhost:930/test/img",
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const positionCell = document.getElementById("Position-cell");
+              const diseaseCell = document.getElementById("Disease-cell");
+
+              positionCell.textContent = data.position || "Unknown";
+              diseaseCell.textContent = data.disease.join(", ") || "No Disease";
+            })
+            .catch((error) => {
+              console.error("Error detecting disease:", error);
+            });
+        });
+      });
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/feather.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  </body>
+</html>

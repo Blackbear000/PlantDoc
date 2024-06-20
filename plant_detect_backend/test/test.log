@@ -1,0 +1,22 @@
+2024-05-05 20:49:31,428 - root - WARNING - test
+2024-05-05 20:49:32,351 - root - WARNING - test
+2024-05-05 20:49:32,351 - root - WARNING - test
+2024-05-05 20:49:32,468 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:930
+ * Running on http://192.168.1.18:930
+2024-05-05 20:49:32,469 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-05-05 20:49:42,840 - werkzeug - INFO - 127.0.0.1 - - [05/May/2024 20:49:42] "[33mGET / HTTP/1.1[0m" 404 -
+2024-05-05 20:49:42,980 - werkzeug - INFO - 127.0.0.1 - - [05/May/2024 20:49:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-05-05 20:49:51,075 - werkzeug - INFO - 192.168.1.18 - - [05/May/2024 20:49:51] "[33mGET / HTTP/1.1[0m" 404 -
+2024-05-05 20:49:51,214 - werkzeug - INFO - 192.168.1.18 - - [05/May/2024 20:49:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-05-05 23:10:12,089 - root - WARNING - test
+2024-05-05 23:10:12,856 - root - WARNING - test
+2024-05-05 23:10:12,856 - root - WARNING - test
+2024-05-05 23:10:12,875 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:930
+ * Running on http://192.168.1.18:930
+2024-05-05 23:10:12,876 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-05-05 23:10:15,890 - werkzeug - INFO - 127.0.0.1 - - [05/May/2024 23:10:15] "[33mGET / HTTP/1.1[0m" 404 -
+2024-05-05 23:10:51,991 - werkzeug - INFO - 192.168.1.18 - - [05/May/2024 23:10:51] "[33mGET / HTTP/1.1[0m" 404 -
